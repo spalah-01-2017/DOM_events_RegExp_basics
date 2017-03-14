@@ -1,0 +1,37 @@
+.container {
+    width: 980px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0px 15px;
+}
+
+.input {
+    display: block;
+    padding: 10px 15px;
+    font-size: 18px;
+    color: green;
+    border: 1px solid #ccc;
+    transition: all .3s linear;
+    margin: 0 0 40px;
+}
+
+.input:focus {
+    outline: 0;
+    box-shadow: 1px 0px 12px 0px rgba(50, 50, 50, 0.75);
+    border: 1px solid #eee;
+}
+
+.submit {
+    padding: 10px 30px;
+    border: 2px solid blue;
+    color: blue;
+    font-weight: 500;
+    background: 0;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+.submit:hover {
+    color: #fff;
+    background: blue;
+}
