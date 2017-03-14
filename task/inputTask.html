@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>User input</title>
+</head>
+<body>
+	<style>
+		.input {
+			width: 250px;
+			height: 50px;
+			resize: none;
+		}
+		.output {
+			width: 250px;
+			height: 250px;
+			font-size: 18px;
+			font-family: sans-serif;
+			background: #000;
+			color: #fff;
+			word-wrap: break-word;
+		}
+	</style>
+	<textarea maxlength="30" class="input"></textarea>
+
+	<p>Осталось символов: <span class="char-counter">40</span></p>
+	<p class="output"></p>
+	<script>
+		function addSymbol(event){
+			document.querySelector('.output').textContent += event.key;
+			document.querySelector('.char-counter').textContent = parseFloat(document.querySelector('.char-counter').textContent) - 1;
+			if (parseFloat(document.querySelector('.char-counter').textContent) === 0) {			
+				document.querySelector('.input').removeEventListener('keypress', addSymbol)
+			}
+		}
+		document.querySelector('.input').addEventListener('keypress', addSymbol)
+	</script>
+</body>
+</html>

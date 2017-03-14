@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>User input</title>
+</head>
+<body>
+	<style>
+		.input {
+			width: 250px;
+			height: 20px;
+			resize: none;
+		}
+		button {
+			display: block;
+		}
+	</style>
+	<textarea class="input"></textarea>
+	<button>search</button>
+	<script>
+		function googleSearch() {
+			var input = document.querySelector('.input')
+			var searchContent = input.value
+			var searchGoogle = 'https://www.google.com/search?q='
+			window.open(searchGoogle + searchContent)
+		}
+		document.querySelector('button').addEventListener('click', googleSearch)
+	</script>
+</body>
+</html>

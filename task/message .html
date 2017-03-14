@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>User input</title>
+</head>
+<body>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		.massege {
+			width: 100%;
+			text-align: center;
+			font-size: 34px;
+			padding: 20px 0;
+			background-color: red;
+			color: white;
+			position: fixed;
+			opacity: 0;
+			transition: opacity .3s;
+			text-transform: uppercase;
+		}
+		.close {
+			position: absolute;
+			right: 10px;
+			top: 0px;
+			cursor: pointer;
+			font-size: 26px;
+			background-color: transparent;
+			border: none;
+			color: white
+		}
+	</style>
+	<div class="massege">
+		<span>Some text</span>
+		<button class="close">✖</button>
+	</div>
+	<script>
+		function Message(msg) {
+			var massege = document.querySelector('.massege')
+			massege.firstElementChild.textContent = msg
+			this.render = function() {
+				massege.style.opacity = '1'
+			}
+			this.destroy = function() {
+				massege.remove()
+			}
+			document.querySelector('.close').addEventListener('click', this.destroy)
+		}
+	</script>
+</body>
+</html>
