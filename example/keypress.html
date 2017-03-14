@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keydown & keyup</title>
+</head>
+<body>
+    <style>
+        .circle {
+            width: 200px;
+            height: 200px;
+            background-color: #000;
+            border: 1px solid #000;
+            border-radius: 50%;
+            display: table;
+            text-align: center;
+            font: bold 28px "Open Sans", sans-serif;
+            color: #fff;
+        }
+        .circle span {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    </style>
+    <div class="circle"><span></span></div>
+    <script>
+        var circleSpan = document.querySelector('.circle span');
+
+        function showCharCode(e) {
+            circleSpan.textContent = String.fromCharCode(e.charCode);
+            console.log(e);
+        }
+        addEventListener("keypress", showCharCode);
+    </script>
+</body>
+</html>

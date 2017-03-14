@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Event delegation</title>
+</head>
+
+<body>
+    <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus enim quidem, sapiente. Quisquam facere, ducimus illum aut numquam consectetur nihil eos adipisci mollitia pariatur porro repudiandae eum odit! Deserunt, harum.5</p>
+        <ul>
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+            <li>item 4</li>
+            <li>item 5</li>
+        </ul>
+    </div>
+
+    <script>
+    var div = document.querySelector('div');
+
+    function logClick(e) {
+        var elem = e.target;
+        console.log('click on', e.target);
+        if (elem.tagName === 'LI') {
+            console.log('li clicked')
+        }
+    }
+    div.addEventListener('click', logClick);
+    </script>
+</body>
+
+</html>

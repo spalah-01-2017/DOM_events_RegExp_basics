@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .outer {
+            width: 200px;
+            height: 200px;
+            background: yellow;
+        }
+        .inner {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <div class="outer">Outer
+        <div class="inner">Inner
+            <button>click me</button>
+        </div>
+    </div>
+    <script>
+        var outer = document.querySelector('.outer');
+        var inner = document.querySelector('.inner');
+        var button = document.querySelector('button');
+        function logOuter() {
+            console.log('outer clicked');
+        }        
+        function logInner(e) {
+            console.log('inner clicked');
+            e.stopPropagation();
+        }
+        function buttonClickHandler(e) {
+            console.log('button clicked');
+
+        }
+        outer.addEventListener('click', logOuter, true);
+        inner.addEventListener('click', logInner, true);
+        button.addEventListener('click', buttonClickHandler);
+    </script>
+</body>
+</html>

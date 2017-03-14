@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keydown & keyup</title>
+</head>
+<body>
+    <style>
+        .circle {
+            width: 200px;
+            height: 200px;
+            background-color: #000;
+            border: 1px solid #000;
+            border-radius: 50%;
+            display: table;
+            text-align: center;
+            font: bold 28px "Open Sans", sans-serif;
+            color: #fff;
+        }
+        .circle span {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    </style>
+    <div class="circle"><span></span></div>
+    <script>
+        var circle = document.querySelector('.circle');
+        var circleSpan = document.querySelector('.circle span');
+        var ENTER_KEY = 13;
+        function showKeyCode(e) {
+            if(e.ctrlKey && e.keyCode === 83) {
+                circleSpan.textContent = 'ctrl + s';
+                console.log(e);
+            } else {
+                circleSpan.textContent = e.keyCode;
+            }
+            circle.style.backgroundColor = 'red';
+        }
+        function makeCircleYellow(e) {
+            circleSpan.textContent = '';
+            circle.style.backgroundColor = 'yellow';
+        }
+        addEventListener('keydown', showKeyCode);
+        addEventListener('keyup', makeCircleYellow);
+    </script>
+</body>
+</html>
