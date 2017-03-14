@@ -8,5 +8,5 @@ submit.addEventListener('click', search);
 function search(e) {
     var inputValue = input.value.trim().replace(/[\s]+/ig, "+");
     var request = searchAddress + inputValue;
-    window.location.href = request;
+    window.open(request);
 }
