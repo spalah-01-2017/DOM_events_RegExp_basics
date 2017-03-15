@@ -34,6 +34,7 @@ Message.prototype.render = function () {
 	
 
 	body.insertBefore(content, document.body.firstChild);
+	this.destroy();
 }
 
 Message.prototype.destroy = function () {
