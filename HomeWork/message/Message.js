@@ -44,5 +44,5 @@ Message.prototype.destroy = function () {
 		content.remove();
 	}
 
-	close.addEventListener('click', closeDiv)
+	close.addEventListener('click', closeDiv);
 }
