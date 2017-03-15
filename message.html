@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>message</title>
+</head>
+<body>
+
+    <script>
+        function Message(message) {
+            this.massage = message;
+            this.element =  document.createElement('div');
+            this.closer = document.createElement('span');
+            this.closer.onclick = function(){
+                this.parentNode.remove();
+            };
+        }
+
+        Message.prototype.render = function () {
+            var text = document.createTextNode(this.massage);
+            var closerText = document.createTextNode('✖');
+            Object.assign(this.element.style, {
+                'position': 'relative',
+                'marginBottom': '5px',
+                'width': '100%',
+                'boxSizing': 'border-box',
+                'padding': '20px',
+                'backgroundColor': '#f00',
+                'color': '#fff',
+                'fontSize': '20px',
+                'textAlign': 'center'
+            });
+            Object.assign(this.closer.style, {
+                'width': '15px',
+                'height': '15px',
+                'position': 'absolute',
+                'right': '5px',
+                'top': '5px',
+                'display': 'block',
+                'cursor': 'pointer',
+                'lineHeight': '15px',
+                'color': '#fff',
+                'fontSize': '16px',
+                'fontWeight': 'bold'
+            });
+            this.closer.appendChild(closerText);
+            this.element.appendChild(this.closer);
+            this.element.appendChild(text);
+            document.body.insertBefore( this.element, document.body.firstChild );
+        };
+        Message.prototype.destroy = function () {
+            this.element.remove();
+        };
+
+        var message = new Message('Some text message');
+        var message2 = new Message('Some text message 2');
+        message.render();
+        message2.render();
+//        message.destroy();
+    </script>
+
+</body>
+</html>

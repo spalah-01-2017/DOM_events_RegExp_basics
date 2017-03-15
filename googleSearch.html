@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>googleSearch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form-group">
+        <div class="align-center">
+            <input id="input" type="text">
+            <button id="button">Search</button>
+        </div>
+    </div>
+
+    <script>
+
+        button.addEventListener('click', sendRequest);
+
+        function sendRequest(){
+            var str = input.value.trim().replace(/\s+/ig, '+');
+            var url = 'https://www.google.com/search?q='+str;
+            window.open(url, '_blank');
+        }
+
+    </script>
+
+</body>
+</html>
