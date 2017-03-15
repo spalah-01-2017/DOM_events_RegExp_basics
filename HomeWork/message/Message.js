@@ -1,6 +1,10 @@
 class Message {
 	constructor (message) {
 		this.message = message;
+		this.body = document.querySelector('body');
+		this.content = document.createElement('div');
+		this.close = document.createElement('p');
+		this.messagePar = document.createElement('p');
 	}
 }
 
@@ -10,41 +14,38 @@ Message.prototype.render = function () {
 	let close = document.createElement('p');
 	let message = document.createElement('p');
 
-	close.textContent = '✖';
-	message.textContent = this.message;
+	this.close.textContent = '✖';
+	this.messagePar.textContent = this.message;
 
-	content.setAttribute('class', 'content');
-	content.style.cssText = "background: red; \
+	this.content.style.cssText = "background: red; \
 	height: 250px; \ ";
 
-	close.setAttribute('class', 'close');
-	close.style.cssText = "color: #fff;	\
+	this.close.style.cssText = "color: #fff;	\
 	font-size: 50px; \
 	margin: 0px; \
 	text-align: right; \
 	margin-right: 9px; \
 	cursor: pointer; \ ";
 
-	message.style.cssText = "color: #fff; \
+	this.messagePar.style.cssText = "color: #fff; \
 	text-align: center; \
 	font-size: 100px; \
 	margin: 0px; \ ";
 
-	content.appendChild(close);
-	content.appendChild(message);
+	this.content.appendChild(this.close);
+	this.content.appendChild(this.messagePar);
 	
 
-	body.insertBefore(content, document.body.firstChild);
+	this.body.insertBefore(this.content, document.body.firstChild);
 	this.destroy();
 }
 
 Message.prototype.destroy = function () {
-	let close = document.querySelector('.close');
-	let content = document.querySelector('.content');
+	let content = this.content;
 
 	function closeDiv () {
 		content.remove();
 	}
 
-	close.addEventListener('click', closeDiv);
+	this.close.addEventListener('click', closeDiv);
 }
