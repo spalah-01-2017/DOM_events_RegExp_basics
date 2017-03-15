@@ -18,11 +18,12 @@ Message.prototype.render = function () {
 	height: 250px; \ ";
 
 	close.setAttribute('class', 'close');
-	close.style.cssText = "font-size: 50px; \
-	color: #fff; \
+	close.style.cssText = "color: #fff;	\
+	font-size: 50px; \
 	margin: 0px; \
 	text-align: right; \
-	margin-right: 9px; \ ";
+	margin-right: 9px; \
+	cursor: pointer; \ ";
 
 	message.style.cssText = "color: #fff; \
 	text-align: center; \
