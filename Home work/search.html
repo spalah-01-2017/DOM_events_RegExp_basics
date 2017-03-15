@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Search</title>
+	<style>
+
+		body {
+			position: relative;
+			min-height: 100vh;
+			background: -webkit-radial-gradient(rgb(22, 135, 237), rgb(14, 43, 72));
+			background: radial-gradient(rgb(22, 135, 237), rgb(14, 43, 72));
+			overflow: hidden;
+		}
+
+		.input-holder {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			white-space: nowrap;
+		}
+
+		.text-input,
+		.submit-btn {
+			padding: 5px 10px;
+			border: 2px solid #fff;
+			border-radius: 15px/50%;
+			font: 18px Verdana, Tahoma, sans-serif;
+		}
+		.text-input:focus,
+		.submit-btn:focus {
+			outline: 0;
+		}
+		
+		.text-input {
+			color: rgb(14, 43, 72);
+			max-width: 200px;
+		}
+		.submit-btn {
+			background: rgb(14, 43, 72);
+			color: #fff;
+		}
+
+	</style>
+</head>
+<body>
+	
+	<div class="input-holder">
+		<input type="text" class="text-input">
+		<button type="button" class="submit-btn">OK</button>
+	</div>
+
+
+	<script>
+		var text = document.querySelector('.text-input');
+		var btn = document.querySelector('.submit-btn');
+
+		btn.onclick = function() {
+		  	window.open('https://www.google.com.ua/search?q=' + text.value);
+		}
+	</script>
+</body>
+</html>
