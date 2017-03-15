@@ -9,11 +9,6 @@ class Message {
 }
 
 Message.prototype.render = function () {
-	let body = document.querySelector('body');
-	let content = document.createElement('div');
-	let close = document.createElement('p');
-	let message = document.createElement('p');
-
 	this.close.textContent = '✖';
 	this.messagePar.textContent = this.message;
 
