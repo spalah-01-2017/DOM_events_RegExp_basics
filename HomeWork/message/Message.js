@@ -5,12 +5,12 @@ class Message {
 		this.content = document.createElement('div');
 		this.close = document.createElement('p');
 		this.messagePar = document.createElement('p');
+		this.close.textContent = '✖';
+		this.messagePar.textContent = this.message;
 	}
 }
 
 Message.prototype.render = function () {
-	this.close.textContent = '✖';
-	this.messagePar.textContent = this.message;
 
 	this.content.style.cssText = "background: red; \
 	height: 250px; \ ";
