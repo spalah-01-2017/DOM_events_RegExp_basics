@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Message</title>
+	<style>
+		body{
+			padding: 0;
+			margin: 0;
+			font-family: arial,verdana,sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		var message = new Message('Hello word!');
+
+		function Message(str){
+			this.messageText = str;
+	        this.body = document.body;
+		 	this.container = document.createElement('div');
+		 	this.container.className = 'message';
+		 	this.close = document.createElement('span');
+		 	this.text = document.createElement('p');
+			this.close.innerHTML = "&#10006;";
+			this.text.innerHTML = this.messageText;
+			this.close.onclick = function () {
+				document.querySelector('.message').remove();
+			}
+			Object.assign(this.container.style,{width:'100%',
+												background:'#ff0000',
+												position:'relative',
+												color:'#fff',
+												display:'table'});
+			Object.assign(this.close.style,{position:'absolute',
+											right:'10px',
+											top:'5px',
+											fontSize:'36px',
+											fontWeight:'bold',
+											cursor:'pointer'});
+			Object.assign(this.text.style,{margin:'0',
+											display:'table-cell',
+											verticalAlign:'middle',
+											textAlign:'center',
+											fontSize:'46px',
+											padding:'50px'});
+		}
+
+		Message.prototype.render = function () {
+			this.container.appendChild(this.close);
+			this.container.appendChild(this.text);
+			this.body.insertBefore(this.container, this.body.firstChild);
+		};
+
+		Message.prototype.destroy = function () {
+				document.querySelector('.message').remove();
+		};
+	</script>
+</body>
+</html>
