@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Search</title>
+	<style>
+		body{
+			font-size: 18px;
+			font-family: arial,verdana,tahoma,sans-serif;
+		}
+		#data-seasch{
+			font-size: 18px;
+			color: #444;
+			background: #e9f1f5;
+			padding: 7px 11px;
+			box-shadow: 0 1px 1px 1px #c7c7c7;
+			border: none;
+			border-radius: 3px;
+			margin-right: 10px;
+			vertical-align: bottom;
+		}
+		#btn-search{
+			display: inline-block;
+			background: #e06618;
+			color: #fff;
+			box-shadow: 0 1px 1px 1px #5d5d5d;
+			text-decoration: none;
+			padding: 7px 11px;
+			border-radius: 3px;
+			}	
+		#btn-search:hover{
+			background: #f7853c;
+			color: #fff;
+		}
+		.wr-search{
+			text-align: center;
+			margin-top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wr-search">
+		<input type="text" id="data-seasch" placeholder="Поиск">
+		<a href="#" id="btn-search">Найти</a>
+	</div>
+	<script type="text/javascript">
+		var input = document.getElementById('data-seasch');
+		var btn = document.getElementById('btn-search');
+		function googleSearch() {
+			if (input.value.trim().length != 0) {
+				var common = "http://google.com/search?q="+input.value.trim().toLowerCase().replace(/\s+/g,"+");
+				btn.setAttribute('href',common);
+				btn.setAttribute('target','_blank');
+
+			}else{
+				alert('Введите текст в поле "Поиск"!');
+			}
+		};
+		btn.addEventListener("click",googleSearch);
+	</script>
+</body>
+</html>
