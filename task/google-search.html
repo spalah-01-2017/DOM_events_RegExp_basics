@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Google search | Misha Parkhomenko</title>
+	
+	<style type="text/css">
+		
+		body {
+			text-align: center;
+			padding-top: 50px;
+		}
+		input, button {
+			border: none;
+			outline: none;
+		}
+		form {
+			display: inline-block;
+		}
+		form .input-item, form .btn {
+			line-height: 50px;
+			height: 50px;
+			font-family: "Helvetica";
+			font-size: 16px;
+			border-radius: 3px;
+		}
+		form .input-item {
+			background-color: #cecece;
+			padding: 0px 30px;
+			color: #4e4e4e;
+		}
+		form .btn {
+			display: inline-block;
+			margin-left: -8px;
+			background-color: #0193cf;
+			padding: 0px 28px;
+			color: #fff;
+		}
+		
+	</style>
+</head>
+<body>
+	
+	<form>
+		<input type="text" class="input-item" placeholder="Enter something" required>
+		<button type="submit" class="btn">Search</button>
+	</form>
+	
+	<script>
+	
+		var btn = document.querySelector('.btn');
+		var input = document.querySelector('.input-item');
+		
+		btn.onclick = function() {
+			window.open('https://www.google.com/search?q=' + input.value);
+		}
+	
+	</script>
+	
+</body>
+</html>
